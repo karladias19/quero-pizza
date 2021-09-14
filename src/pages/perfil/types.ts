@@ -1,4 +1,4 @@
-import { Payment } from '../../../utils';
+import { Payment } from '../../utils';
 
 type Item = {
   id?: number;
