@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import perfilLogo from '../../../assets/images/perfil-logo.png';
 import { useLocalStorage } from '../../../hooks';
@@ -9,7 +9,7 @@ import { MainProps } from './types';
 import * as S from './styles';
 
 export function Main({ name, lastOrders }: MainProps) {
-  const history = useHistory();
+  // const history = useHistory();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

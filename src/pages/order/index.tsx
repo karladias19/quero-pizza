@@ -44,12 +44,12 @@ export function Order() {
       ${bagItems?.map(({ name, itemTotalPrice, psText, itemQuantity }) => (
         `%0a${itemQuantity} ${name} ${itemTotalPrice} ${psText ? `%0a${psText}`: ''}`
       )).join(' ')}
-      %0a------------------------
+      %0a-----------------------------
       %0aEndereço de entrega:%0a${address}
-      %0a------------------------
+      %0a-----------------------------
       %0aMétodo de pagamento:%0a${payment}
       ${(change || 0) > 0 && payment === 'em dinheiro'
-        ? `%0a------------------------%0aTroco para ${numberFormat.toMoney(change)}`
+        ? `%0a-----------------------------%0aTroco para ${numberFormat.toMoney(change)}`
         : ''}
     `
   );
