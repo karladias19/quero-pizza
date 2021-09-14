@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useLocalStorage } from '~hooks';
-import { pluralize, size } from '~utils';
+import { useLocalStorage } from '../../../hooks';
+import { pluralize, size } from '../../../utils';
 
 import { WORDS } from './constants';
 import { Order } from './types';

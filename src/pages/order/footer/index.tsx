@@ -1,4 +1,4 @@
-import { extratFromBag, size } from '~utils';
+import { extratFromBag, size } from '../../../utils';
 
 import { FooterProps } from './types';
 import * as S from './styles';

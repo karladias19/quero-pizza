@@ -1,9 +1,9 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { Welcome } from '~pages/welcome';
-import { Pedido } from '~pages/pedido';
-import { Perfil } from '~pages/perfil';
-import { Order } from '~pages/order';
+import { Welcome } from '../pages/welcome';
+import { Pedido } from '../pages/pedido';
+import { Perfil } from '../pages/perfil';
+import { Order } from '../pages/order';
 
 export function Routes() {
   return (

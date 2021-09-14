@@ -6,8 +6,8 @@ import { Info } from './info';
 import { Main } from './main';
 import { Footer } from './footer';
 
-import { numberFormat } from '~utils';
-import { useLocalStorage } from '~hooks';
+import { numberFormat } from '../../utils';
+import { useLocalStorage } from '../../hooks';
 import { BagItem, Items } from './types';
 import * as S from './styles';
 

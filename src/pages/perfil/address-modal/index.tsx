@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-import { validateAddress } from '~utils';
+import { validateAddress } from '../../../utils';
 
 import * as S from './styles';
 import { AddressModalProps } from './types';

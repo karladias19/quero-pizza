@@ -9,8 +9,8 @@ import {
   FaCheck
 } from 'react-icons/fa';
 
-import { size } from '~utils';
-import { useLocalStorage } from '~hooks';
+import { size } from '../../../utils';
+import { useLocalStorage } from '../../../hooks';
 import * as S from './styles';
 
 export function Header() {

@@ -1,6 +1,6 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
-import { keyMaker } from '~utils';
+import { keyMaker } from '../utils';
 
 export function useLocalStorage<T = undefined>(
   key: string,

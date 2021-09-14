@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import { FaShoppingBag } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 
-import { useLocalStorage } from '~hooks';
-import { BagItem } from '~types';
-import { extratFromBag, size } from '~utils';
+import { useLocalStorage } from '../../hooks';
+import { BagItem } from '../../types';
+import { extratFromBag, size } from '../../utils';
 
 import * as S from './styles';
 

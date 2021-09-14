@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { StyledModal } from '~components';
+import { StyledModal } from '../../../components';
 
 import { AddressStyledModalProps } from './types';
 

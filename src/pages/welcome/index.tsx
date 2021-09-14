@@ -5,10 +5,10 @@ import { Menu } from './menu';
 import { Main } from './main';
 import { Info } from './info';
 
-import { BagButton } from '~components';
-import { info, menu } from '~data';
-import { useIntersectionObserver } from '~hooks';
-import { shuffle } from '~utils';
+import { BagButton } from '../../components';
+import { info, menu } from '../../data';
+import { useIntersectionObserver } from '../../hooks';
+import { shuffle } from '../../utils';
 
 import * as S from './styles';
 

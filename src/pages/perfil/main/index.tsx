@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import perfilLogo from '~assets/images/perfil-logo.png';
-import { useLocalStorage } from '~hooks';
-import { AddressModal } from '~pages/perfil/address-modal';
+import perfilLogo from '../../../assets/images/perfil-logo.png';
+import { useLocalStorage } from '../../../hooks';
+import { AddressModal } from '../../../pages/perfil/address-modal';
 
 import { MainProps } from './types';
 import * as S from './styles';

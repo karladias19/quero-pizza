@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { numberFormat } from '~utils';
+import { numberFormat } from '../../../utils';
 import { MainProps, Item } from './types';
 import * as S from './styles';
 

@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
-import { BagItem } from '~types';
+import { BagItem } from '../../../types';
 
 type MainProps = {
   bag?: BagItem[];

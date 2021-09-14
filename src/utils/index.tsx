@@ -1,4 +1,4 @@
-import { BagItem } from '~types';
+import { BagItem } from '../types';
 
 export const keyMaker = (key: string) => `qU&r0-þiZz@:${key}`; 
 

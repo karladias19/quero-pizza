@@ -1,4 +1,4 @@
-import { BagItem } from '~types';
+import { BagItem } from '../../../types';
 
 type FooterProps = {
   bag?: BagItem[];

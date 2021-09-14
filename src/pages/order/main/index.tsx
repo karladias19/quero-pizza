@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
-import { AddressModal } from '~pages/perfil/address-modal';
-import { extratFromBag } from '~utils';
+import { AddressModal } from '../../../pages/perfil/address-modal';
+import { extratFromBag } from '../../../utils';
 
 import { MainProps } from './types';
 import * as S from './styles';

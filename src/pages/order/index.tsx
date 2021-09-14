@@ -5,8 +5,8 @@ import { Header } from './header';
 import { Main } from './main';
 import { Footer } from './footer';
 
-import { useLocalStorage } from '~hooks';
-import { Payment, size } from '~utils';
+import { useLocalStorage } from '../../hooks';
+import { Payment, size } from '../../utils';
 
 import { BagItem } from './types';
 import * as S from './styles';

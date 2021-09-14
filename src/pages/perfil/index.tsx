@@ -4,8 +4,8 @@ import { Header } from './header';
 import { Main } from './main';
 import { Footer } from './footer';
 
-import { BagButton } from '~components';
-import { useLocalStorage } from '~hooks';
+import { BagButton } from '../../components';
+import { useLocalStorage } from '../../hooks';
 
 import { Order } from './types';
 import * as S from './styles';
