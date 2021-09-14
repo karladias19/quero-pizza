@@ -13,7 +13,7 @@ export function Main({ bag, payment, handleSelectChange, addressStoraged, setAdd
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const [change, setChange] = useLocalStorage('change', '0');
+  const [change, setChange] = useLocalStorage('change', '');
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);

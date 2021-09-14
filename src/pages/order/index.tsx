@@ -6,7 +6,7 @@ import { Main } from './main';
 import { Footer } from './footer';
 
 import { useLocalStorage } from '../../hooks';
-import { Payment, size } from '../../utils';
+import { numberFormat, Payment, size } from '../../utils';
 
 import { BagItem } from './types';
 import * as S from './styles';
@@ -26,9 +26,9 @@ export function Order() {
 
   const [redirect, setRedirect] = useState(false);
 
-  const [change] = useLocalStorage('change', '0');
+  const [change] = useLocalStorage('change', '');
   const [bag, setBag] = useLocalStorage<BagItem[]>('bag', []);
-  const [payment, setPayment] = useLocalStorage<string>('payment', Payment.CREDIT);
+  const [payment, setPayment] = useLocalStorage<string>('payment', 'CREDIT');
   const [addressStoraged, setAddressStoraged] = useLocalStorage<string>('address');
 
   const clearBag = () => {
@@ -39,29 +39,31 @@ export function Order() {
     });
   };
 
-  const toWhatsapp = ({ bagItems, address, payment, change }: OrderType): string => {
-    const l = '%0a-----------------------------------';
-    const bagsString = bagItems?.map(({ name, itemTotalPrice, psText, itemQuantity }) => (
-      `%0a${itemQuantity} ${name} ${itemTotalPrice}%0a${psText}`
-    ));
-    const addressString = `%0aEndereço de entrega: ${address}`;
-    const paymentString = `%0aMétodo de pagamento: ${payment}`;
-    const changeString = change ? `%0aTroco para ${change}` : '';
-
-    return `${l}${bagsString}${l}${addressString}${l}${paymentString}${l}${l}${changeString}${l}`;
-  }
+  const toWhatsapp = ({ bagItems, address, payment, change }: OrderType): string => (
+    `
+      ${bagItems?.map(({ name, itemTotalPrice, psText, itemQuantity }) => (
+        `%0a${itemQuantity} ${name} ${itemTotalPrice} ${psText ? `%0a${psText}`: ''}`
+      )).join(' ')}
+      %0a------------------------
+      %0aEndereço de entrega:%0a${address}
+      %0a------------------------
+      %0aMétodo de pagamento:%0a${payment}
+      ${(change || 0) > 0 && payment === 'em dinheiro'
+        ? `%0a------------------------%0aTroco para ${numberFormat.toMoney(change)}`
+        : ''}
+    `
+  );
 
   const continueOrder = () => {
     const order: OrderType = {
       bagItems: bag,
       address: addressStoraged,
       payment: PaymentType[payment || 'CREDIT'],
-      change,
+      change: Number(change),
     }
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}/?text=${toWhatsapp(order)}`);
-    setRedirect(true);
-    //clearBag();
+    clearBag();
   }
 
   const handleSelectChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {

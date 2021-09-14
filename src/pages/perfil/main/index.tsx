@@ -57,7 +57,7 @@ export function Main({ name, lastOrders }: MainProps) {
         />
       </S.AddressContent>
 
-      <S.LastOrdersContent>
+      {/* <S.LastOrdersContent>
         <h4>Aqui estão seus últimos 3 pedidos realizados:</h4>
         {lastOrders?.length ? (
           lastOrders.map(lastOrder => lastOrder)
@@ -69,7 +69,7 @@ export function Main({ name, lastOrders }: MainProps) {
             </button>
           </S.WithoutLastOrder>
         )}
-      </S.LastOrdersContent>
+      </S.LastOrdersContent> */}
     </S.MainContainer>
   );
 }

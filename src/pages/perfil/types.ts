@@ -21,7 +21,7 @@ type Order = {
   address?: string;
   items?: Item[];
   bagItems?: BagItem[];
-  change?: string;
+  change?: number;
 };
 
 export type { Order };
