@@ -12,7 +12,7 @@ import { BagItem } from './types';
 import * as S from './styles';
 import { Order as OrderType } from '../perfil/types';
 
-const WHATSAPP_NUMBER = '5562994528748';
+const WHATSAPP_NUMBER = '5562985171320';
 
 const PaymentType: { [key: string]: string } = {
   'CREDIT': Payment.CREDIT,
@@ -39,8 +39,16 @@ export function Order() {
     });
   };
 
-  const toWhatsapp = (order: OrderType): string => {
-    return JSON.stringify(order);
+  const toWhatsapp = ({ bagItems, address, payment, change }: OrderType): string => {
+    const l = '%0a-----------------------------------';
+    const bagsString = bagItems?.map(({ name, itemTotalPrice, psText, itemQuantity }) => (
+      `%0a${itemQuantity} ${name} ${itemTotalPrice}%0a${psText}`
+    ));
+    const addressString = `%0aEndereço de entrega: ${address}`;
+    const paymentString = `%0aMétodo de pagamento: ${payment}`;
+    const changeString = change ? `%0aTroco para ${change}` : '';
+
+    return `${l}${bagsString}${l}${addressString}${l}${paymentString}${l}${l}${changeString}${l}`;
   }
 
   const continueOrder = () => {
